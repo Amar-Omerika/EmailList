@@ -1,5 +1,4 @@
 //jshint esversion 6
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
@@ -7,10 +6,6 @@ const { json } = require("body-parser");
 const https = require("https");
 const path = require("path");
 const app = express();
-
-app.listen(3000, function () {
-	console.log("Server is runing on port 3000");
-});
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -59,4 +54,7 @@ app.post("/", function (req, res) {
 });
 app.post("/failure", function (req, res) {
 	res.redirect("/");
+});
+app.listen(3000, function () {
+	console.log("Server is runing on port 3000");
 });
